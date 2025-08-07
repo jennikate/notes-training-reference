@@ -1,0 +1,62 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "target": "esnext", // compiles into esnext code (can specify what we like)
+    "types": [],
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs 
+    // :: note these defaulted to true, I've set to false because they are not being generated in the example course
+    "sourceMap": false,
+    "declaration": false,
+    "declarationMap": false,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true, // enables all the strict type-checking options
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  },
+  // can list out all the files we want TS to include by filename (not practical)
+  // "files": [
+  //   "index.ts",
+  //   "farmstand.ts"
+  // ]
+  // OR can use include and exclude which is more practical
+  // NOTE if you have a 'files' item then includes/excludes is ignored and files is used
+  "include": [
+    "src" // include everything in the src directory
+  ],
+  "exclude": [
+    "src/donttouch.ts", // only applies to anything within the included directories, if outside those it is by default excluded already
+    "node_modules"
+  ]
+  // normally you use patters for include/exclude like
+  // e.g. **.test.ts -> exclude all things ending in .test.ts
+  // by default TS excludes node_modules, however if you add a specific exclude section you need to go and add that back in
+}

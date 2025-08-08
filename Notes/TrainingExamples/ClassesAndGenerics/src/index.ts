@@ -163,12 +163,12 @@ const sam = new PartTimeEmployee("bob", "burger", 10, 20);
 // ========================
 // Generics
 
-function doThing(thing: number | string): number | string {
-    // function accepts a single number or string
-    // and returns a single number or string
-    // doesn't indicate which will be returned
-    // and we have to decide within our function what we want to return
-}
+// function doThing(thing: number | string): number | string {
+//     // function accepts a single number or string
+//     // and returns a single number or string
+//     // doesn't indicate which will be returned
+//     // and we have to decide within our function what we want to return
+// }
 
 // we can write a function that says if I am given a number I return a number
 // name of the Interface<type> -> can be a literal, a union, an alias 
@@ -213,7 +213,7 @@ function identity<Type>(item: Type): Type {
 const stringTest = stringIdentity("my string");
 const identityTest = identity<number>(7);
 const identityTestCat = identity<Cat>({ name: "bob" });
-const identityTestInvalid = identity<string>(7);
+// const identityTestInvalid = identity<string>(7);
 
 // console.log(stringTest);
 // console.log(identityTest)
@@ -342,7 +342,7 @@ class Playlist<T> { // we genericise the playlist class
 }
 
 const songs = new Playlist<Song>()
-songs.add() // requires the Song type
+// songs.add() // requires the Song type
 
-const videos = new Playlist<Video>()
-videos.add() // requires the Video type
+// const videos = new Playlist<Video>()
+// videos.add() // requires the Video type
